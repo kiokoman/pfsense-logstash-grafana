@@ -1,6 +1,6 @@
 # pfsense-logstash-grafana
 
-![Alt text](/images/immagine.jpg?raw=true "Screenshot")
+![ScreenShot](https://raw.github.com/kiokoman/pfsense-logstash-grafana/master/images/immagine.jpg)
 
 tested under Ubuntu, pfSense 2.4.5-p1 and 2.5.0 (RFC 3164)
 
