@@ -1,6 +1,6 @@
 # pfsense-logstash-grafana
 
-![ScreenShot](https://raw.githubusercontent.com/kiokoman/pfsense-logstash-grafana/master/images/immagine.jpg)
+![ScreenShot](https://github.com/kiokoman/pfsense-logstash-grafana/blob/master/images/Immagine.jpg)
 
 tested under Ubuntu, pfSense 2.4.5-p1 and 2.5.0 (RFC 3164)
 
