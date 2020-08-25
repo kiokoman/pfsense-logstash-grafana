@@ -1,0 +1,101 @@
+{
+  "circleMaxSize": "10",
+  "circleMinSize": 2,
+  "colors": [
+    "#37872D",
+    "#E0B400",
+    "#FA6400",
+    "#C4162A"
+  ],
+  "esMetric": "Count",
+  "fieldConfig": {
+    "defaults": {
+      "custom": {}
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 14,
+    "w": 11,
+    "x": 0,
+    "y": 25
+  },
+  "id": 36,
+  "initialZoom": "2",
+  "locationData": "countries",
+  "mapCenter": "Europe",
+  "mapCenterLatitude": 46,
+  "mapCenterLongitude": 14,
+  "maxDataPoints": 1,
+  "pluginVersion": "7.1.3",
+  "showLegend": true,
+  "stickyLabels": true,
+  "tableQueryOptions": {
+    "geohashField": "geohash",
+    "latitudeField": "latitude",
+    "longitudeField": "longitude",
+    "metricField": "metric",
+    "queryType": "geohash"
+  },
+  "targets": [
+    {
+      "alias": "$tag_country",
+      "groupBy": [
+        {
+          "params": [
+            "country"
+          ],
+          "type": "tag"
+        }
+      ],
+      "hide": false,
+      "measurement": "logstash",
+      "orderByTime": "ASC",
+      "policy": "autogen",
+      "query": "SELECT count(\"id\") FROM \"autogen\".\"logstash\" WHERE $timeFilter GROUP BY \"country\"",
+      "rawQuery": false,
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "id"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "count"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "action",
+          "operator": "=",
+          "value": "block"
+        },
+        {
+          "condition": "AND",
+          "key": "iface",
+          "operator": "=",
+          "value": "pppoe0"
+        }
+      ]
+    }
+  ],
+  "thresholds": "5,30,80",
+  "title": "Block by Firewall",
+  "type": "grafana-worldmap-panel",
+  "valueName": "total",
+  "decimals": 0,
+  "hideEmpty": false,
+  "hideZero": false,
+  "mouseWheelZoom": false,
+  "timeFrom": null,
+  "timeShift": null,
+  "unitPlural": "",
+  "unitSingle": "",
+  "datasource": null
+}

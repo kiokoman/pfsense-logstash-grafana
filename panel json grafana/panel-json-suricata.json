@@ -1,0 +1,92 @@
+{
+  "circleMaxSize": "10",
+  "circleMinSize": 2,
+  "colors": [
+    "#56A64B",
+    "#F2CC0C",
+    "#FF780A",
+    "#E02F44"
+  ],
+  "datasource": "InfluxDB",
+  "esMetric": "Count",
+  "fieldConfig": {
+    "defaults": {
+      "custom": {}
+    },
+    "overrides": []
+  },
+  "gridPos": {
+    "h": 14,
+    "w": 10,
+    "x": 11,
+    "y": 25
+  },
+  "id": 38,
+  "initialZoom": "2",
+  "locationData": "countries",
+  "mapCenter": "Europe",
+  "mapCenterLatitude": 46,
+  "mapCenterLongitude": 14,
+  "maxDataPoints": 1,
+  "pluginVersion": "7.1.3",
+  "showLegend": true,
+  "tableQueryOptions": {
+    "geohashField": "geohash",
+    "latitudeField": "latitude",
+    "longitudeField": "longitude",
+    "metricField": "metric",
+    "queryType": "geohash"
+  },
+  "targets": [
+    {
+      "alias": "$tag_country",
+      "groupBy": [
+        {
+          "params": [
+            "country"
+          ],
+          "type": "tag"
+        }
+      ],
+      "measurement": "logstash",
+      "orderByTime": "ASC",
+      "policy": "autogen",
+      "refId": "A",
+      "resultFormat": "time_series",
+      "select": [
+        [
+          {
+            "params": [
+              "rules_id"
+            ],
+            "type": "field"
+          },
+          {
+            "params": [],
+            "type": "count"
+          }
+        ]
+      ],
+      "tags": [
+        {
+          "key": "action",
+          "operator": "=",
+          "value": "[wDrop]"
+        }
+      ]
+    }
+  ],
+  "thresholds": "5,30,80",
+  "title": "Block by Suricata",
+  "type": "grafana-worldmap-panel",
+  "valueName": "total",
+  "decimals": 0,
+  "hideEmpty": false,
+  "hideZero": false,
+  "mouseWheelZoom": false,
+  "stickyLabels": false,
+  "timeFrom": null,
+  "timeShift": null,
+  "unitPlural": "",
+  "unitSingle": ""
+}
