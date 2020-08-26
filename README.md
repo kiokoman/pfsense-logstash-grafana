@@ -42,3 +42,7 @@ sudo systemctl status grafana-server
 Configure the Grafana server to start at boot:
 
 sudo systemctl enable grafana-server.service
+
+# Configuration
+
+edit 30-outputs.conf and change db, user and password for influxdb
