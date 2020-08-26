@@ -11,6 +11,10 @@ https://docs.influxdata.com/influxdb/v1.8/introduction/install/
 # howto install logstash
 https://www.elastic.co/guide/en/logstash/current/installing-logstash.html
 
+install influxdb plugin
+
+/usr/share/logstash/bin/logstash-plugin install logstash-output-influxdb
+
 # howto install Grafana
 
 sudo apt-get install -y apt-transport-https
