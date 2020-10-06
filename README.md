@@ -49,4 +49,6 @@ to install worldmap plugin:
 
 # Configuration
 
-edit 30-outputs.conf and change db, user and password for influxdb
+edit 30-outputs.conf and change db, user, password and retention policies for influxdb.
+for the Raspberry i suggest to set a smaller retention policy otherwise the file will become huge to the point where Influx will stop working.
+https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/#modify-retention-policies-with-alter-retention-policy
