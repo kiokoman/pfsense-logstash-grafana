@@ -51,6 +51,8 @@ to install worldmap plugin:
 
 edit 30-outputs.conf and change db, user, password and retention policies for influxdb.
 
+edit 11-pfsense.conf YOU NEED TO UNCOMMENT AND CONFIGURE #database => with the location of your GeoLite2-City.mmdb !!!
+
 For the Raspberry i suggest to set a smaller retention policy otherwise the file will become huge to the point where Influx will stop working.(Out of Memory)
 
 https://docs.influxdata.com/influxdb/v1.8/query_language/manage-database/#modify-retention-policies-with-alter-retention-policy
